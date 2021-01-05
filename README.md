@@ -1,1 +1,1 @@
-# learn-git
+This repository contains a tutorial on learning git and github found [here](afredston.github.io/learn-git/learn-git.html). It was written in January 2021 for the Advanced Ecological Data Analysis class at Rutgers. Contact fredston@rutgers.edu with any questions. 

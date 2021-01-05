@@ -9,15 +9,121 @@ output:
     toc_float: 
       collapsed: true
       smooth_scroll: true
-    toc_depth: 3
+    toc_depth: 2
     theme: default
     highlight: default
 ---
 
 # Introduction
 
-This material was prepared for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. 
+This material was prepared for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. Feel free to reach out to me at any time; there are lots of ways to get in touch on [my website](www.alexafredston.com).
+
+I prepared this tutorial, but I can't take credit for it! This was created based on materials made public by generous members of the open science community, including: 
+
+* Jenny Bryan, RStudio
+* Allison Horst, University of California, Santa Barbara
+* Julia Stewart Lowndes, National Center for Ecological Analysis and Synthesis
+* Grant McDermott, University of Oregon
 
 ## Motivation
 
+There are a number of reasons to transition to a coding workflow that integrates git and github. 
+
+Here's a screenshot of the folder containing my senior thesis drafts from college (just the versions from the night it was due!)
+
+![](thesisversions.png)
+
+In the words of [Grant McDermott, an economist at the University of Oregon](
+https://raw.githack.com/uo-ec607/lectures/master/02-git/02-Git.html#1):
+
+![](grant_slide8.png)
+![](grant_slide9.png)
+
+Like Grant, I use github for my [papers](https://github.com/afredston/range-edge-niches), [tutorials](https://github.com/afredston/collaborations_workflows_lecture), and [personal website](https://github.com/afredston/personalwebsite). 
+
+## Teaching goals
+
+By the end of this tutorial, you should:
+
+* Have git correctly installed on your computer and integrated with RStudio.
+* Understand what git and github are and how they interface with RStudio. 
+* Be able to create a version controlled R project with a github repository.
+* Understand the pull-commit-push workflow, the concept of branches, and how collaboration works. 
+* Have a handle on resources to turn to when things go wrong. 
+* Have an awareness of some more advanced functions and options in git/github. 
+
 ## Setup 
+
+*Before class, please do the following:* 
+
+1. Get git installed on your computer and set up a github account. The best resource for this is [happygitwithr.com](https://happygitwithr.com/github-acct.html). Please follow the instructions for Sections 4-7. If you don't use RStudio, I can provide a quick overview during class; I'll be using it exclusively here. 
+1. Identify a project of yours for which you've written some code that will be your github guinea pig. You don't need to reorganize anything yet, but please know where the code lives on your computer. 
+
+**Please get in touch with me if you have any issues setting up git!**
+
+# Tutorial Part I: Setting up version control
+
+## Creating a repository
+
+Go to [github](www.github.com) and set up a repository by clicking "new", choosing a repository name (no spaces!) and adding a README. Names should be short, distinct, and relevant to the project you're working on right now; maybe it's `ant-genetics`, `lit_meta_analysis`, or `gutcontentanalysis`? (Don't panic; you can change it later.) Leave the repository public for now so it's easy for us to help you troubleshoot problems, but feel free to make it private later as you're developing your research. I usually keep mine private until I've submitted the associated manuscript or published a preprint. 
+
+This will take you to a page for your new repository. Congratulations! Leave that open in your browser, and head back to RStudio. 
+
+## Creating an R project
+
+R projects link RStudio, git, and github. They're a great way to organize files and manage file paths. R projects are an integral part of the R+git data science ecosystem and I strongly encourage you to use them for all your projects going forward. **You should also open code by going to file -> open project and clicking on the .Rproj file that you are about to learn to generate, rather than opening individual scripts.**
+
+Your first task here is to create a folder for this R project. 
+
+### A tangent on file paths 
+
+You could, in theory, put this R project anywhere. But I really REALLY think you should create every R project in its own subfolder of a directory called `github` that lives in your root ("home") directory. Why do this? First of all, it'll just organize all your code, and mirror the structure of what you see on github. Second, it makes working across users and machines easier if all your file paths start with `~/github/repo-name`. 
+
+### "Checking out" a repository
+
+Open RStudio. Go to file -> new project -> version control (if you don't see version control, start troubleshooting [here](https://happygitwithr.com/rstudio-see-git.html)) -> git. 
+
+Go back to your browser and the github repo you just created. Click the green button that says "code" and then the clipboard next to the URL. Paste this into the URL box back in RStudio. The directory name is the same as the repository name (`ant-genetics`), and again, I strongly encourage you to create this as a subdirectory of a folder in your root directory called "github".
+
+Great job! You've now created a new R project with version control. If you had any issues up to this point, there's a walkthrough of the same process with screenshots that could be helpful [here](https://rstudio-conf-2020.github.io/r-for-excel/github.html#create-a-repository-on-github.com). 
+
+## Editing a script 
+
+In the Files pane in RSTudio you should see the contents of your new repository! The .Rproj file is very handy; when you want to navigate back here, just use file -> open project in RStudio. 
+
+Open `README.md` and type in a one-sentence summary of this project. Save the changes. 
+
+## The git workflow
+
+There are three core actions that govern version control in git/github:
+
+* **commit**: this "saves" your changes with git (as opposed to ctrl+S which saves them to your local machine). 
+* **pull**: this "downloads" any changes to your repository on github, by your collaborators, or your past self on a different machine. 
+* **push**: this "uploads" your changes to github.
+
+In the RStudio pane that defaults to "Environment" (should be top right unless you have rearranged the panes), click on the Git tab. If you don't see it, try restarting RStudio and troubleshooting  [here](https://happygitwithr.com/rstudio-see-git.html). This provides a user-friendly way for you to see what files are in this repository, and their version control status. Here's a key to the little color-coded boxes:
+
+* ?: You haven't told git what to do with these files. This is fine, although later we'll talk about a way to suppress these files if they're annoying. 
+* M: Modified from previous commit
+* A: Added since previous commit
+* D: Deleted since previous commit
+
+# Intermediate 
+
+
+## Branching 
+
+# Advanced
+
+## gitignore 
+
+
+1. Sign up for free Github Pro via the [Github Education Pack](https://education.github.com/pack/offers); 
+
+## Collaborative best practices: file paths 
+
+`here`
+
+## Github Issues
+
+## Github Projects
