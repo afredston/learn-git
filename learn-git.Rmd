@@ -1,0 +1,23 @@
+---
+title: "Git and Github for Advanced Ecological Data Analysis"
+author: "Alexa Fredston"
+date: "January 28, 2021"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+    toc_depth: 3
+    theme: default
+    highlight: default
+---
+
+# Introduction
+
+This material was prepared for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. 
+
+## Motivation
+
+## Setup 
