@@ -20,10 +20,10 @@ This material was prepared (using [rmarkdown and github](https://github.com/afre
 
 I prepared this tutorial, but I can't take credit for it! This was created based on materials made public by generous members of the open science community, including: 
 
-* Jenny Bryan, RStudio
-* Allison Horst, University of California, Santa Barbara
-* Julia Stewart Lowndes, National Center for Ecological Analysis and Synthesis
-* Grant McDermott, University of Oregon
+* [R for Excel Users by Julie Lowndes (NCEAS) and Allison Horst (UCSB)]( https://rstudio-conf-2020.github.io/r-for-excel/github.html#summary-1) 
+* [Happy git with R by Jenny Bryan, RStudio](https://happygitwithr.com/github-acct.html) 
+* [Lecture notes by Grant McDermott, University of Oregon](https://raw.githack.com/uo-ec607/lectures/master/02-git/02-Git.html#1) 
+* 
 
 ## Motivation
 
@@ -214,16 +214,16 @@ You can see that some of these situations would arise in a collaborative setting
 
 By default, everything that you have committed so far is on the `main` branch of your repository. (This used to be called `master`, so if you see github documentation talking about the master branch, it's the same thing.) You can see this toward the top left of the browser page for the repo on github. If you click on it, you'll see an option to switch branches (but you shouldn't have any others) or to create one. 
 
-Lots of ecologists happily use rstudio+github without ever dealing with branches, and that's fine! But in software development and data science generally, they're *really* common. 
+Lots of ecologists happily use rstudio+github without ever dealing with branches, and that's fine. But in software development and data science generally, they're *really* common. 
 
 ![](git-branches-merge.png)
 [Photo credit](https://www.nobledesktop.com/learn/git/git-branches)
 
-Don't worry if you don't find this model intuitive; it took me awhile to "get" the branch model used in git, and other people "get" it right away. 
+Don't worry if you don't find this model intuitive; it took me awhile to "get" the branch model used in git, and other people "get" it right away. If you want to explore more visual representations, check out [this interactive site](https://learngitbranching.js.org/?locale=en_US), although keep in mind it is based around using the terminal. 
 
 A key thing to remember about working on a branch is that *you need to retrieve changes from the main branch as you go so that the two are integrable at the end.* Otherwise, you'll end up with a merge conflict (see below). 
 
-### Creating, editing, and merging a branch
+### Creating a branch
 
 At this stage, your group will divide into different roles. We're going to be making some changes to the repository created by Student A. Arbitrarily decide amongst yourselves who is Student A and Student B (if your group has more than two people, you can either screenshare or set up multiple pairs.) Student A is the repository creator, and Student B is going to be developing some new code on a branch.
 
@@ -231,13 +231,15 @@ At this stage, your group will divide into different roles. We're going to be ma
 
 On the repository page on github *for Student A* (either one of you can do this), click on "main" on the top left. In the dropdown box, type "development" and click "create branch: development from main". Congratulations, you've just created a branch!
 
+### Editing a branch
+
 **Student B**: You should have already set up Student A's repository with version control on your computer. Open it by double-clicking on its .Rproj file or going to file -> recent projects. git pull; you should get a notification that there is a new branch called "development". To start working on this branch, click the commit button in the git pane in RStudio and select "development" from the dropdown list of branches on the top left. 
 
-Create a new R script called "studentB.R". Put anything in it that you want; it can just be a comment `#hello` or `#test`. Save it. 
+Create a new R script called `studentB.R`. Put anything in it that you want; it can just be a comment `#hello` or `#test`. Save it. 
 
-**Meanwhile, Student A**: Open up your repository in RStudio -- the same one that Student B has open -- and git pull. You'll see the development branch, but *stay on the main branch*. Create a new R script called "studentA.R". Put anything in it that you want; it can just be a comment `#hello` or `#test`. Save it.
+**Meanwhile, Student A**: Open up your repository in RStudio -- the same one that Student B has open -- and git pull. You'll see the development branch, but *stay on the main branch*. Create a new R script called `studentA.R`. Put anything in it that you want; it can just be a comment `#hello` or `#test`. Save it.
 
-Now, *staying on the main branch*, commit studentA.R, pull, and push your changes. 
+Now, *staying on the main branch*, commit `studentA.R`, pull, and push your changes. 
 
 **Student B**: Uh-oh -- you were working on your development branch, and someone made "upstream" changes to the main branch! How can you tell? If you go to github and select the development branch (top left), you'll see a note that says "1 commit behind main". 
 
@@ -245,28 +247,33 @@ It's important to stay on top of this while working on a branch (and it's easy t
 
 This is why the branching model is so great: you can just peacefully incorporate the updates Student A has made on the main branch, and keep chugging along on the development branch. 
 
-Many users will do this in the terminal, but I promised you we'd be just using RStudio and GitHub today, so here's a workaround via the `usethis` package (you'll have to install it if you don't already have it): run
-
-```{r}
-usethis::pr_merge_main()
-```
+Many users will do this in the terminal, but I promised you we'd be just using RStudio and GitHub today, so here's a workaround via the `usethis` package (you'll have to install it if you don't already have it): run ```usethis::pr_merge_main()```
 
 Full disclosure: this didn't work on my computer! If you, Student B, run into the same problem that I did, just click the "terminal" tab to the right of "console" (bottom left pane of RStudio if you haven't rearranged it) and type in `git pull origin main` and hit enter. 
 
 If either of those approaches works correctly, you should see a message that one file was added, and see in the project directory that your partner added a script to the repository. 
 
-Now that your development branch is up-to-date, you need to commit your changes to the development branch. Click "commit" to open the git pane, and be sure the branch name (top left) says "development". Commit studentB.R to this branch, and push your changes. 
+Now that your development branch is up-to-date, you need to commit your changes to the development branch. Click "commit" to open the git pane, and be sure the branch name (top left) says "development". Commit `studentB.R` to this branch, and push your changes. 
 
-Once you've made the changes you wanted (creating studentB.R), it's time to merge your changes back into the main branch! In practice, you'd do this when you were finished developing whatever feature you created the branch for. 
+### Merging a branch
+
+Once you've made the changes you wanted (creating `studentB.R`), it's time to merge your changes back into the main branch! In practice, you'd do this when you were finished developing whatever feature you created the branch for. 
 
 This happens via a "pull request", where the developer (Student B) is asking the person managing the main branch (Student A) to accept ("pull") their changes. This might seem unnecessarily formal for our purposes, but it's designed for scenarios where the projects are really complex and not everyone has access to (or wants responsibility for!) managing what gets merged into the main branch and when. 
 
 Go back to github. We haven't really used them yet, but on the home page for your repository, you'll see little tabs along the top (the first is "code"). Click on "pull requests", and "new pull request." Mine shows some "example comparisons", and the first is "development"; click that. It should say "able to merge" at the top. Click "create pull request", and you should see a green check mark next to "able to merge". You can add an extra comment here, although it's not mandatory. Then click "create pull request." 
+
 **Student A:** While you were relaxing, Student B has been hard at work developing some new scripts for your repository! Now, they want to merge their changes back into the main branch. If you go to the pull requests tab (OK, either of you could've done this), you should see a pull request. Click "merge pull request" and "confirm merge": you should see a message that it was successful, and you can delete the development branch safely, since all of its history is now part of main. (Go ahead and delete it if you want, so your repo stays tidy.)
 
 ## Forking
 
-Everything we've covered up to now concerns a repository that you've created. But, that's not the only way to get a repository. 
+Everything we've covered up to now concerns a repository that you've created. But, that's not the only way to get a repository. Sometimes, you want to get your own carbon copy of someone else's repository without having ownership over it or being part of the same organization. Forking isn't a one-way process: you can contribute back to the original repository (and stay up-to-date with its advances) -- see [github's guide](https://guides.github.com/activities/forking/) for more info.
+
+I commonly do this when people publish repositories to accompany research papers (please do this!) and I want to explore their methods and be able to open the code (and possibly re-run it) on my own machine. 
+
+We don't have a tutorial activity for this -- I just wanted you to know it's an option. Here are some fun repositories you might be interested in forking: 
+
+* 
 
 ## Recap 
 
@@ -280,7 +287,9 @@ The rest of the tutorial is optional and can be done later or bookmarked for fut
 
 # Tutorial Part III: advanced techniques for better science in less time
 
-### Sidebar: merge conflicts
+I've collated some additional material here for your reference. I hope that reading through it, now or later, will give you an idea of resources and concepts out there for your future self. 
+
+## Merge conflicts
 
 I think the #1 reason why people might not feel positively towards git is this all-too-common scenario:
 
@@ -294,14 +303,25 @@ These "merge conflicts" arise when you've asked git to incorporate changes that 
 
 Keep in mind that these resources require working from the command line, which we've avoided so far in this tutorial. 
 
+## Best practices for your workflow 
+
+Once you're comfortable with git+github+rstudio in your daily practice, there are a lot of strategies you can use to fine-tune your approach. I gave a presentation on some of these best practices [here](https://github.com/afredston/collaborations_workflows_lecture), and Dan Ovando (UW) has a tutorial on some coding best practices for reproducibility [here](https://github.com/DanOvando/reproducible-workflow). 
+
 ## Making the most of GitHub
 
-All of you should sign up for free Github Pro via the [Github Education Pack](https://education.github.com/pack/offers).
+All of you should sign up for free Github Pro via the [Github Education Pack](https://education.github.com/pack/offers). It comes with a lot of perks that you can read more about.
 
-### Github Issues
+### Github Issues and Projects
 
-### Github Projects
+GitHub repositories are more than a great way to organize code (and eventually make it public) with version control. Two really useful features are Issues, which is like a message board where you can keep track of proposed problems, improvements, etc. in your code, and Projects, which is a project organization tool. I haven't used Projects, but I know Issues are a great way to track development and interact with other team members / code users for complex projects -- especially crucial if you want a lot of people to interact with your code, e.g. through an R package (see [VAST example](https://github.com/James-Thorson-NOAA/VAST/issues)). Mark Scheuerell at UW has a great overview of both [here](https://fish497.github.io/website/lectures/week_02/lec_04_intro_github.html#Issues).  
 
-## File paths
+## File paths continued
 
-`here`
+I mentioned earlier how I organize all of my directories: folders for `scripts`, `processed-data`, etc. In tandem with this approach, I use a phenomenally helpful R package called [here](https://github.com/jennybc/here_here). This simple package uses relative file paths from wherever your .Rproj lives, so if you code `read_csv(here("processed-data","data.csv"))` *it will work wherever this script lives in the directory, on any machine*. I highly recommend it.   
+
+## Further reading and resources
+
+* [Excuse me, do you have a moment to talk about version control? -Jenny Bryan](https://peerj.com/preprints/3159/)
+* [Making your code citable](https://guides.github.com/activities/citable-code/)
+* [ohshitgit for when things go wrong](https://ohshitgit.com/)
+* [A full Software Carpentry git course](https://swcarpentry.github.io/git-novice/)
