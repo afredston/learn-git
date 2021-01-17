@@ -1567,7 +1567,7 @@ div.tocify {
 
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>This material was prepared for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. Feel free to reach out to me at any time; there are lots of ways to get in touch on <a href="www.alexafredston.com">my website</a>.</p>
+<p>This material was prepared (using <a href="https://github.com/afredston/learn-git">rmarkdown and github</a>) for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. Feel free to reach out to me at any time; there are lots of ways to get in touch on <a href="www.alexafredston.com">my website</a>.</p>
 <p>I prepared this tutorial, but I can’t take credit for it! This was created based on materials made public by generous members of the open science community, including:</p>
 <ul>
 <li>Jenny Bryan, RStudio</li>
@@ -1602,6 +1602,7 @@ div.tocify {
 <ol style="list-style-type: decimal">
 <li>Get git installed on your computer and set up a github account. The best resource for this is <a href="https://happygitwithr.com/github-acct.html">happygitwithr.com</a>. Please follow the instructions for Sections 4-7. If you don’t use RStudio, I can provide a quick overview during class; I’ll be using it exclusively here.</li>
 <li>Identify a project of yours for which you’ve written some code that will be your github guinea pig. You don’t need to reorganize anything yet, but please know where the code lives on your computer.</li>
+<li>Read <a href="https://www.nature.com/articles/s41559-017-0160">Lowndes <em>et al.</em> 2017 <em>Nature Ecology and Evolution</em></a>.</li>
 </ol>
 <p><strong>Please get in touch with me if you have any issues setting up git!</strong></p>
 </div>
@@ -1610,8 +1611,43 @@ div.tocify {
 <h1><span class="header-section-number">2</span> Tutorial Part I: Setting up version control</h1>
 <div id="creating-a-repository" class="section level2">
 <h2><span class="header-section-number">2.1</span> Creating a repository</h2>
-<p>Go to <a href="www.github.com">github</a> and set up a repository by clicking “new”, choosing a repository name (no spaces!) and adding a README. Names should be short, distinct, and relevant to the project you’re working on right now; maybe it’s <code>ant-genetics</code>, <code>lit_meta_analysis</code>, or <code>gutcontentanalysis</code>? (Don’t panic; you can change it later.) Leave the repository public for now so it’s easy for us to help you troubleshoot problems, but feel free to make it private later as you’re developing your research. I usually leave mine private until I’ve submitted the associated manuscript or published a preprint.</p>
+<p>Log in to <a href="www.github.com">github</a> – you should have created an account already. Set up a repository by clicking “new”, choosing a repository name (no spaces!) and adding a README. Names should be short, distinct, and relevant to the project you’re working on right now; maybe it’s <code>ant-genetics</code>, <code>lit_meta_analysis</code>, or <code>gutcontentanalysis</code>? (Don’t panic; you can change it later.) Leave the repository public for now so it’s easy for us to help you troubleshoot problems, but feel free to make it private later as you’re developing your research. I usually keep mine private until I’ve submitted the associated manuscript or published a preprint.</p>
 <p>This will take you to a page for your new repository. Congratulations! Leave that open in your browser, and head back to RStudio.</p>
+</div>
+<div id="creating-an-r-project" class="section level2">
+<h2><span class="header-section-number">2.2</span> Creating an R project</h2>
+<p>R projects link RStudio, git, and github. They’re a great way to organize files and manage file paths. R projects are an integral part of the R+git data science ecosystem and I strongly encourage you to use them for all your projects going forward. <strong>You should also open code by going to file -&gt; open project and clicking on the .Rproj file that you are about to learn to generate, rather than opening individual scripts.</strong></p>
+<div id="a-tangent-on-file-paths" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> A tangent on file paths</h3>
+<p>You could, in theory, put this R project anywhere. But I really REALLY think you should create every R project in its own subfolder of a directory called <code>github</code> that lives in your root (“home”) directory. Why do this? First of all, it’ll just organize all your code, and mirror the structure of what you see on github. Second, it makes working across users and machines easier if all your file paths start with <code>~/github/repo-name</code>.</p>
+</div>
+<div id="checking-out-a-repository" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> “Checking out” a repository</h3>
+<p>Open RStudio. Go to file -&gt; new project -&gt; version control (if you don’t see version control, start troubleshooting <a href="https://happygitwithr.com/rstudio-see-git.html">here</a>) -&gt; git.</p>
+<p>Go back to your browser and the github repo you just created. Click the green button that says “code” and then the clipboard next to the URL. Paste this into the URL box back in RStudio. The directory name is the same as the repository name (<code>ant-genetics</code>), and again, I strongly encourage you to create this as a subdirectory of a folder in your root directory called “github”.</p>
+<p>Great job! You’ve now created a new R project with version control, in a folder with the same name as your repository. If you had any issues up to this point, there’s a walkthrough of this same process with screenshots that could be helpful <a href="https://rstudio-conf-2020.github.io/r-for-excel/github.html#create-a-repository-on-github.com">here</a>.</p>
+</div>
+</div>
+<div id="editing-a-script" class="section level2">
+<h2><span class="header-section-number">2.3</span> Editing a script</h2>
+<p>In the Files pane in RStudio you should see the contents of your new repository. The .Rproj file is very handy; when you want to navigate back here, just use file -&gt; open project in RStudio.</p>
+<p>Open <code>README.md</code> and type in a one-sentence summary of this project. Save the changes.</p>
+</div>
+<div id="the-git-workflow" class="section level2">
+<h2><span class="header-section-number">2.4</span> The git workflow</h2>
+<p>There are three core actions that govern version control in git/github:</p>
+<ul>
+<li><strong>commit</strong>: this “saves” your changes with git (as opposed to ctrl+S which saves them to your local machine – although you should still do that too).</li>
+<li><strong>pull</strong>: this “downloads” any changes to your repository on github, by your collaborators, or your past self on a different machine.</li>
+<li><strong>push</strong>: this “uploads” your changes to github.</li>
+</ul>
+<p>In the RStudio pane that defaults to “Environment” (should be top right unless you have rearranged the panes), click on the Git tab. If you don’t see it, try restarting RStudio and troubleshooting <a href="https://happygitwithr.com/rstudio-see-git.html">here</a>. This provides a user-friendly way for you to see what files are in this repository, and their version control status. Here’s a key to the little color-coded boxes:</p>
+<ul>
+<li>?: You haven’t told git what to do with these files. This is fine, although later we’ll talk about a way to suppress these files if they’re annoying.</li>
+<li>M: Modified from previous commit</li>
+<li>A: Added since previous commit</li>
+<li>D: Deleted since previous commit</li>
+</ul>
 </div>
 </div>
 <div id="intermediate" class="section level1">
@@ -1622,14 +1658,21 @@ div.tocify {
 </div>
 <div id="advanced" class="section level1">
 <h1><span class="header-section-number">4</span> Advanced</h1>
+<div id="gitignore" class="section level2">
+<h2><span class="header-section-number">4.1</span> gitignore</h2>
 <ol style="list-style-type: decimal">
 <li>Sign up for free Github Pro via the <a href="https://education.github.com/pack/offers">Github Education Pack</a>;</li>
 </ol>
+</div>
+<div id="collaborative-best-practices-file-paths" class="section level2">
+<h2><span class="header-section-number">4.2</span> Collaborative best practices: file paths</h2>
+<p><code>here</code></p>
+</div>
 <div id="github-issues" class="section level2">
-<h2><span class="header-section-number">4.1</span> Github Issues</h2>
+<h2><span class="header-section-number">4.3</span> Github Issues</h2>
 </div>
 <div id="github-projects" class="section level2">
-<h2><span class="header-section-number">4.2</span> Github Projects</h2>
+<h2><span class="header-section-number">4.4</span> Github Projects</h2>
 </div>
 </div>
 
