@@ -259,16 +259,16 @@ Now that your development branch is up-to-date, you need to commit your changes 
 
 Once you've made the changes you wanted (creating studentB.R), it's time to merge your changes back into the main branch! In practice, you'd do this when you were finished developing whatever feature you created the branch for. 
 
-Go back to github. We haven't really used them yet, but on the home page for your repository, you'll see little tabs along the top -- the first is "code". Click on "pull requests", and "new pull request." 
+This happens via a "pull request", where the developer (Student B) is asking the person managing the main branch (Student A) to accept ("pull") their changes. This might seem unnecessarily formal for our purposes, but it's designed for scenarios where the projects are really complex and not everyone has access to (or wants responsibility for!) managing what gets merged into the main branch and when. 
 
-
-ADD TUTORIAL STEPS ON BRANCHING 
+Go back to github. We haven't really used them yet, but on the home page for your repository, you'll see little tabs along the top (the first is "code"). Click on "pull requests", and "new pull request." Mine shows some "example comparisons", and the first is "development"; click that. It should say "able to merge" at the top. Click "create pull request", and you should see a green check mark next to "able to merge". You can add an extra comment here, although it's not mandatory. Then click "create pull request." 
+**Student A:** While you were relaxing, Student B has been hard at work developing some new scripts for your repository! Now, they want to merge their changes back into the main branch. If you go to the pull requests tab (OK, either of you could've done this), you should see a pull request. Click "merge pull request" and "confirm merge": you should see a message that it was successful, and you can delete the development branch safely, since all of its history is now part of main. (Go ahead and delete it if you want, so your repo stays tidy.)
 
 ## Forking
 
 Everything we've covered up to now concerns a repository that you've created. But, that's not the only way to get a repository. 
 
-ADD TUTORIAL STEPS ON FORKING
+## Recap 
 
 Let's recap -- you can now:
 
@@ -276,10 +276,9 @@ Let's recap -- you can now:
 * Add collaborators to a repository
 * Create branches or forks for development purposes 
 
+The rest of the tutorial is optional and can be done later or bookmarked for future reference, if you run out of time. 
+
 # Tutorial Part III: advanced techniques for better science in less time
-
-This part of the tutorial is optional and can be done later or bookmarked for future reference, if you run out of time. 
-
 
 ### Sidebar: merge conflicts
 
