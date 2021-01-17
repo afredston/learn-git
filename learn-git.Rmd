@@ -23,7 +23,6 @@ I prepared this tutorial, but I can't take credit for it! This was created based
 * [R for Excel Users by Julie Lowndes (NCEAS) and Allison Horst (UCSB)]( https://rstudio-conf-2020.github.io/r-for-excel/github.html#summary-1) 
 * [Happy git with R by Jenny Bryan, RStudio](https://happygitwithr.com/github-acct.html) 
 * [Lecture notes by Grant McDermott, University of Oregon](https://raw.githack.com/uo-ec607/lectures/master/02-git/02-Git.html#1) 
-* 
 
 ## Motivation
 
@@ -124,6 +123,10 @@ Now, check the "Staged" box next to README, and click "commit". A new window sho
 Go back to your browser and reload the page for this repository on GitHub. Do you see the changes you made? 
 
 Look around the repository page for a little bit. It has some helpful information, including the commit message, commit history, and time of last commit for each file. Chat with your partner about how these features and version control in general might be useful for more complex projects. 
+
+### Sidebar: a good commit message 
+
+The content of commit messages is really important because if you need to go back through your code for any reason, they should (if well written) succinctly tell you what each commit accomplished or changed. They often read like subject lines of emails. In the future, I encourage you to take some time to look through other people's repositories (there are some linked later in this tutorial) and see how they approach writing commit messages. 
 
 Congratulations, you've made it to the end of Part I!
 
