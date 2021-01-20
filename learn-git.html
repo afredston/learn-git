@@ -1605,7 +1605,7 @@ div.tocify {
 <h2><span class="header-section-number">1.4</span> Setup</h2>
 <p><em>Before class, please do the following:</em></p>
 <ol style="list-style-type: decimal">
-<li>Get git installed on your computer and set up a github account. The best resource for this is <a href="https://happygitwithr.com/github-acct.html">happygitwithr.com</a>. Please follow the instructions for Sections 4-7. If you don’t use RStudio, I can provide a quick overview during class; I’ll be using it exclusively here.</li>
+<li>Get git installed on your computer and set up a github account. The best resource for this is <a href="https://happygitwithr.com/github-acct.html">happygitwithr.com</a>. Please follow the instructions for Sections 4-7 (ignore 4.3). If you don’t use RStudio, I can provide a quick overview during class; I’ll be using it exclusively here.</li>
 <li>Email me (<a href="mailto:fredston@rutgers.edu" class="email">fredston@rutgers.edu</a>) your github username.</li>
 <li>Identify a project of yours for which you’ve written some code that will be your github guinea pig. You don’t need to reorganize anything yet, but please know where the code lives on your computer.</li>
 <li>Read <a href="https://www.nature.com/articles/s41559-017-0160">Lowndes <em>et al.</em> 2017 <em>Nature Ecology and Evolution</em></a>.</li>
@@ -1613,8 +1613,8 @@ div.tocify {
 <p><strong>Please get in touch with me if you have any issues setting up git!</strong></p>
 </div>
 </div>
-<div id="tutorial-part-i-setting-up-version-control" class="section level1">
-<h1><span class="header-section-number">2</span> Tutorial Part I: Setting up version control</h1>
+<div id="setting-up-version-control" class="section level1">
+<h1><span class="header-section-number">2</span> Setting up version control</h1>
 <div id="creating-a-repository" class="section level2">
 <h2><span class="header-section-number">2.1</span> Creating a repository</h2>
 <p>Log in to <a href="www.github.com">github</a> – you should have created an account already. Also, if you haven’t already, accept the invitation to join the aeda2021 organization. Set up a repository by clicking “new”, choosing a repository name (no spaces!) and adding a README and a gitignore file. Names should be short, distinct, and relevant to the project you’re working on right now; maybe it’s <code>ant-genetics</code>, <code>lit_meta_analysis</code>, or <code>gutcontentanalysis</code>? (Don’t panic; you can change it later.) Leave the repository public for now so it’s easy for us to help you troubleshoot problems, but feel free to make it private later as you’re developing your research. I usually keep mine private until I’ve submitted the associated manuscript or published a preprint.</p>
@@ -1664,13 +1664,13 @@ div.tocify {
 <div id="sidebar-a-good-commit-message" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> Sidebar: a good commit message</h3>
 <p>The content of commit messages is really important because if you need to go back through your code for any reason, they should (if well written) succinctly tell you what each commit accomplished or changed. They often read like subject lines of emails. In the future, I encourage you to take some time to look through other people’s repositories (there are some linked later in this tutorial) and see how they approach writing commit messages.</p>
-<p>Congratulations, you’ve made it to the end of Part I!</p>
+<p>Congratulations, you’ve finished setting up git + GitHub + RStudio!</p>
 </div>
 </div>
 </div>
-<div id="tutorial-part-ii-git-and-github-in-practice" class="section level1">
-<h1><span class="header-section-number">3</span> Tutorial Part II: git and github in practice</h1>
-<p>In Part II we’ll operationalize git and github in your RStudio for real coding and collaboration, and highlight some best practices for this workflow.</p>
+<div id="git-and-github-in-practice" class="section level1">
+<h1><span class="header-section-number">3</span> git and GitHub in practice</h1>
+<p>In this section, we’ll operationalize git and github in your RStudio for real coding and collaboration, and highlight some best practices for this workflow.</p>
 <div id="set-up-your-project-repository" class="section level2">
 <h2><span class="header-section-number">3.1</span> Set up your project repository</h2>
 <p>Remember that we named your repository after a project that you want to manage with rstudio + github? Time to get some real science underway!</p>
@@ -1728,7 +1728,7 @@ div.tocify {
 <h2><span class="header-section-number">3.4</span> Collaborative coding</h2>
 <p>It’s common to have multiple people working on the same repository.</p>
 <p>Add one of your other group members to your repository on github by going to “settings” and “manage access”. Go through the process of setting up an R project with version control in RStudio again, linked to the other person’s repository to which you just got granted access.</p>
-<p>You can imagine that if you both create a file called <code>analysis.R</code> that contained different code, and tried to commit and push it at the same time, that git would have a problem because it would not be able to reconcile which version to use. This would cause a “merge conflict” (see Part III) which we really want to avoid.</p>
+<p>You can imagine that if you both create a file called <code>analysis.R</code> that contained different code, and tried to commit and push it at the same time, that git would have a problem because it would not be able to reconcile which version to use. This would cause a “merge conflict” (see later section) which we really want to avoid.</p>
 <p>One simple way to avoid this is to just communicate with collaborators about when you are working on code, and when you have pushed changes. This is suitable for small groups on which participants aren’t coding continuously.</p>
 <p>But rapidly as projects get more complex, you’ll need to create branches and forks – so read on, and remember that you are always collaborating with your future self!</p>
 </div>
@@ -1791,14 +1791,21 @@ div.tocify {
 <li>Add collaborators to a repository</li>
 <li>Create branches or forks for development purposes</li>
 </ul>
+</div>
+</div>
+<div id="aeda2021-homework" class="section level1">
+<h1><span class="header-section-number">4</span> AEDA2021 homework</h1>
+<p>This tutorial was designed to teach you a workflow that will work for real research in practice. To cement the core skills of git, GitHub, and RStudio, it’s also what Advanced Ecological Data Analysis students will be using to submit all homework assignments.</p>
+<p>Let’s go through exactly how that will work. The scripts for each week are stored in <a href="https://github.com/aeda2021/2021_master">the master repository</a>. Clone this repository onto your local machine, following the steps we just learned.</p>
+<p>If you’ve explored the <a href="https://github.com/aeda2021">GitHub organization for AEDA 2021</a> at all, you probably noticed there’s already a repository for your name! Clone that one too.</p>
+<p>To get the R scripts for the course, you need to manually duplicate them from the <code>2021_master</code> repo to the <code>your_name</code> repo on your computer. <em>Don’t forget to frequently <code>pull</code> in the <code>2021_master</code> repo so you see course updates!</em> To be sure you have the hang of this, duplicate the script <code>2_github.R</code> into your personal repo, commit it, and push your changes. Check on GitHub to see that the new script has appeared in your personal repo.</p>
 <p>The rest of the tutorial is optional and can be done later or bookmarked for future reference, if you run out of time.</p>
 </div>
-</div>
-<div id="tutorial-part-iii-advanced-techniques-for-better-science-in-less-time" class="section level1">
-<h1><span class="header-section-number">4</span> Tutorial Part III: advanced techniques for better science in less time</h1>
+<div id="advanced-techniques-for-better-science-in-less-time" class="section level1">
+<h1><span class="header-section-number">5</span> Advanced techniques for better science in less time</h1>
 <p>I’ve collated some additional material here for your reference. I hope that reading through it, now or later, will give you an idea of resources and concepts out there for your future self.</p>
 <div id="merge-conflicts" class="section level2">
-<h2><span class="header-section-number">4.1</span> Merge conflicts</h2>
+<h2><span class="header-section-number">5.1</span> Merge conflicts</h2>
 <p>I think the #1 reason why people might not feel positively towards git is this all-too-common scenario:</p>
 <ol style="list-style-type: decimal">
 <li>You’re working contentedly on your local RStudio, and reach a good stopping point in your work.</li>
@@ -1812,23 +1819,23 @@ div.tocify {
 <p>Keep in mind that these resources require working from the command line, which we’ve avoided so far in this tutorial.</p>
 </div>
 <div id="best-practices-for-your-workflow" class="section level2">
-<h2><span class="header-section-number">4.2</span> Best practices for your workflow</h2>
+<h2><span class="header-section-number">5.2</span> Best practices for your workflow</h2>
 <p>Once you’re comfortable with git+github+rstudio in your daily practice, there are a lot of strategies you can use to fine-tune your approach. I gave a presentation on some of these best practices <a href="https://github.com/afredston/collaborations_workflows_lecture">here</a>, and Dan Ovando (UW) has a tutorial on some coding best practices for reproducibility <a href="https://github.com/DanOvando/reproducible-workflow">here</a>.</p>
 </div>
 <div id="making-the-most-of-github" class="section level2">
-<h2><span class="header-section-number">4.3</span> Making the most of GitHub</h2>
+<h2><span class="header-section-number">5.3</span> Making the most of GitHub</h2>
 <p>All of you should sign up for free Github Pro via the <a href="https://education.github.com/pack/offers">Github Education Pack</a>. It comes with a lot of perks that you can read more about.</p>
 <div id="github-issues-and-projects" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Github Issues and Projects</h3>
+<h3><span class="header-section-number">5.3.1</span> Github Issues and Projects</h3>
 <p>GitHub repositories are more than a great way to organize code (and eventually make it public) with version control. Two really useful features are Issues, which is like a message board where you can keep track of proposed problems, improvements, etc. in your code, and Projects, which is a project organization tool. I haven’t used Projects, but I know Issues are a great way to track development and interact with other team members / code users for complex projects – especially crucial if you want a lot of people to interact with your code, e.g. through an R package (see <a href="https://github.com/James-Thorson-NOAA/VAST/issues">VAST example</a>). Mark Scheuerell at UW has a great overview of both <a href="https://fish497.github.io/website/lectures/week_02/lec_04_intro_github.html#Issues">here</a>.</p>
 </div>
 </div>
 <div id="file-paths-continued" class="section level2">
-<h2><span class="header-section-number">4.4</span> File paths continued</h2>
+<h2><span class="header-section-number">5.4</span> File paths continued</h2>
 <p>I mentioned earlier how I organize all of my directories: folders for <code>scripts</code>, <code>processed-data</code>, etc. In tandem with this approach, I use a phenomenally helpful R package called <a href="https://github.com/jennybc/here_here">here</a>. This simple package uses relative file paths from wherever your .Rproj lives, so if you code <code>read_csv(here(&quot;processed-data&quot;,&quot;data.csv&quot;))</code> <em>it will work wherever this script lives in the directory, on any machine</em>. I highly recommend it.</p>
 </div>
 <div id="further-reading-and-resources" class="section level2">
-<h2><span class="header-section-number">4.5</span> Further reading and resources</h2>
+<h2><span class="header-section-number">5.5</span> Further reading and resources</h2>
 <ul>
 <li><a href="https://peerj.com/preprints/3159/">Excuse me, do you have a moment to talk about version control? -Jenny Bryan</a></li>
 <li><a href="https://guides.github.com/activities/citable-code/">Making your code citable</a></li>
