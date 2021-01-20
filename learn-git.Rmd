@@ -276,9 +276,12 @@ Everything we've covered up to now concerns a repository that you've created. Bu
 
 I commonly do this when people publish repositories to accompany research papers (please do this!) and I want to explore their methods and be able to open the code (and possibly re-run it) on my own machine. 
 
-We don't have a tutorial activity for this -- I just wanted you to know it's an option. Here are some fun repositories you might be interested in forking: 
+We don't have a tutorial activity for this -- I just wanted you to know it's an option. Here are some fun examples of repositories you might want to fork one day: 
 
-* 
+* A [seriously reproducible paper](https://github.com/grantmcdermott/blueparadox)
+* Any R package you're curious about the methods for (how about [lme4?](https://github.com/lme4/lme4))
+* Someone else's [personal website repo](https://github.com/afredston/personalwebsite), which is the easiest way to make your own!
+* [GitHub itself](https://github.com/github/)
 
 ## Recap 
 
