@@ -63,7 +63,7 @@ By the end of this tutorial, you should:
 
 *Before class, please do the following:* 
 
-1. Get git installed on your computer and set up a github account. The best resource for this is [happygitwithr.com](https://happygitwithr.com/github-acct.html). Please follow the instructions for Sections 4-7 (ignore 4.3). If you don't use RStudio, I can provide a quick overview during class; I'll be using it exclusively here. 
+1. Get git installed on your computer and set up a github account. The best resource for this is [happygitwithr.com](https://happygitwithr.com/github-acct.html). Please follow the instructions for Sections 4, 5, 6, and 7 (ignore 4.3). If you don't use RStudio, I can provide a quick overview during class; I'll be using it exclusively here. 
 1. Email me (fredston@rutgers.edu) your github username. 
 1. Identify a project of yours for which you've written some code that will be your github guinea pig. You don't need to reorganize anything yet, but please know where the code lives on your computer. 
 1. Read [Lowndes *et al.* 2017 *Nature Ecology and Evolution*](https://www.nature.com/articles/s41559-017-0160).
@@ -295,11 +295,9 @@ Let's recap -- you can now:
 
 This tutorial was designed to teach you a workflow that will work for real research in practice. To cement the core skills of git, GitHub, and RStudio, it's also what Advanced Ecological Data Analysis students will be using to submit all homework assignments. 
 
-Let's go through exactly how that will work. The scripts for each week are stored in [the master repository](https://github.com/aeda2021/2021_master). Clone this repository onto your local machine, following the steps we just learned. 
+Let's go through exactly how that will work. The scripts for each week are stored in [the master repository for this course](https://github.com/aeda2021/2021_master). Take a minute to look around the repository and the [GitHub organization for AEDA 2021](https://github.com/aeda2021). You'll notice there's already a repository for your name. Clone both repositories -- `your_name` and `2021_master` -- onto your local machine, following the steps we just learned. 
 
-If you've explored the [GitHub organization for AEDA 2021](https://github.com/aeda2021) at all, you probably noticed there's already a repository for your name! Clone that one too. 
-
-To get the R scripts for the course, you need to manually duplicate them from the `2021_master` repo to the `your_name` repo on your computer. *Don't forget to frequently `pull` in the `2021_master` repo so you see course updates!* To be sure you have the hang of this, duplicate the script `2_github.R` into your personal repo, commit it, and push your changes. Check on GitHub to see that the new script has appeared in your personal repo. 
+To get the R scripts for the course, you need to manually duplicate them from the `2021_master` repo to the `your_name` repo on your computer. *Don't forget to frequently `pull` in the `2021_master` repo so you see course updates!* To be sure you have the hang of this, duplicate the script `2_github.R` into your personal repo. For your actual homework, you'll edit these scripts; practice now by adding a comment with some text. Save your changes to `2_github.R`, commit them, and push your changes. Check on GitHub to see that the new script has appeared in your personal repo. 
 
 The rest of the tutorial is optional and can be done later or bookmarked for future reference, if you run out of time. 
 
