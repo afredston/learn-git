@@ -75,7 +75,7 @@ By the end of this tutorial, you should:
 ## Creating a repository
 
 Log in to [github](www.github.com) -- you should have created an account already. Also, if you haven't already, accept the invitation to join the aeda2021 organization. 
-Set up a repository by clicking "new", choosing a repository name (no spaces!) and adding a README and a gitignore file. Names should be short, distinct, and relevant to the project you're working on right now; maybe it's `ant-genetics`, `lit_meta_analysis`, or `gutcontentanalysis`? (Don't panic; you can change it later.) Leave the repository public for now so it's easy for us to help you troubleshoot problems, but feel free to make it private later as you're developing your research. I usually keep mine private until I've submitted the associated manuscript or published a preprint. 
+Set up a repository (from your home page on github.com, not the AEDA2021 organization) by clicking "new", choosing a repository name (no spaces!) and adding a README and a gitignore file. Names should be short, distinct, and relevant to the project you're working on right now; maybe it's `ant-genetics`, `lit_meta_analysis`, or `gutcontentanalysis`? (Don't panic; you can change it later.) Leave the repository public for now so it's easy for us to help you troubleshoot problems, but feel free to make it private later as you're developing your research. I usually keep mine private until I've submitted the associated manuscript or published a preprint. 
 
 This will take you to a page for your new repository. Congratulations! Leave that open in your browser, and head back to RStudio. 
 
