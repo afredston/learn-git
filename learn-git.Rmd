@@ -16,7 +16,7 @@ output:
 
 # Introduction
 
-This material was prepared (using [rmarkdown and github](https://github.com/afredston/learn-git)) for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. Feel free to reach out to me at any time; there are lots of ways to get in touch on [my website](www.alexafredston.com).
+This material was prepared (using [rmarkdown and github](https://github.com/afredston/learn-git)) for a three-hour virtual session to teach Git and Github to a graduate-level course on Advanced Ecological Data Analysis taught at Rutgers University by Malin Pinsky and Rachael Winfree. (However, the only course-specific material is Section 4; the rest should be applicable to any reader.) Feel free to reach out to me at any time; there are lots of ways to get in touch on [my website](www.alexafredston.com).
 
 I prepared this tutorial, but I can't take credit for it! This was created based on materials made public by generous members of the open science community, including: 
 
